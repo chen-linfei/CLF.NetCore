@@ -26,7 +26,7 @@ namespace CLF.Core.Test.Domain
         }
 
         /// <summary>
-        /// 生成Acccount数据库
+        /// 生成Acccount数据库.
         /// </summary>
         [Test]
         public void InitAcccountDatabase()
