@@ -1,6 +1,6 @@
 # CLF.NetCore
 ### 框架介绍
-CLF.NetCore是一个拿来即用的B/S开源基础框架，采用DDD思想设计框架，以Asp.net core Mvc， EF Core为主要技术，易上手，易扩展，可适用于中小型项目。它已经帮你搭建好了一个基础的.NET Core框架，包括前端（AdminLET，基于BootStrap），Download项目后可以直接开展业务逻辑，写增删改查代码，不管是.NET新手还是老鸟都能轻松上手。
+CLF.NetCore是一个拿来即用的B/S开源基础框架，采用DDD思想设计框架，以Asp.net core Mvc， EF Core为主要技术，易上手，易扩展，可适用于中小型项目。它已经帮你搭建好了一个基础的.NET Core框架，包括前端（AdminLTE，基于BootStrap），Download项目后可以直接开展业务逻辑，写增删改查代码，不管是.NET新手还是老鸟都能轻松上手。
 
 ### 项目架构分层
 * 基础架构层
