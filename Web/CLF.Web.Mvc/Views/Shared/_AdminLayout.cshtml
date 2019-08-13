@@ -1,0 +1,145 @@
+﻿@{
+    var kendoVersion = "2014.1.318";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CLF.NetCore</title>
+
+    <!--CSS-->
+    <link href="~/css/admin/styles.css" rel="stylesheet" />
+    <link href="~/lib/adminLTE/css/AdminLTE.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="@Url.Content($"~/lib/kendo/{kendoVersion}/kendo.default.min.css")" rel="stylesheet" />
+    <link href="@Url.Content($"~/lib/kendo/{kendoVersion}/kendo.common.min.css")" rel="stylesheet" />
+    @*<link href="~/lib/jquery-ui/jquery-ui-1.10.3/jquery-ui-themes/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet" />*@
+    <link href="~/lib/fontAwesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/lib/typeahead/typeahead.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+    <link href="~/lib/adminLTE/css/skins/_all-skins.css" rel="stylesheet" />
+    @*<link href="~/lib/datatables/css/jquery.dataTables.css" rel="stylesheet" />*@
+    <link href="~/lib/datatables/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/layer/theme/default/layer.css" rel="stylesheet" />
+    <link href="~/lib/bootstrapValidator/css/bootstrapValidator.css" rel="stylesheet" />
+
+    <!--Script-->
+    <script src="~/lib/jquery/jquery-1.10.2.min.js"></script>
+    <script src="~/lib/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/lib/adminLTE/js/adminlte.min.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate-v1.11.1/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/jquery-migrate/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/lib/typeahead/typeahead.bundle.min.js"></script>
+    <script src="~/js/admin.common.js"></script>
+    <script src="@Url.Content($"~/lib/kendo/{kendoVersion}/kendo.web.min.js")"></script>
+    <script src="~/lib/datatables/js/jquery.dataTables.js"></script>
+    <script src="~/lib/datatables/js/dataTables.bootstrap.js"></script>
+    <script src="~/lib/datatables/extensions/dataTables.select.js"></script>
+    <script src="~/lib/layer/layer.js"></script>
+    <script src="~/lib/bootstrapValidator/js/bootstrapValidator.js"></script>
+    @*<script src="~/lib/jquery-ui/jquery-ui-1.10.3/jquery-ui-1.10.3.custom.min.js"></script>*@
+    <script src="~/js/public.common.js"></script>
+
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <div class="main-header">
+            <a href="#" class="logo">
+                <span class="logo-mini"><b>A</b>LT</span>
+                <span class="logo-lg"><b>Admin</b>LTE</span>
+            </a>
+            <div class="navbar navbar-static-top">
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">&nbsp;</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="account-info">
+                            chenlinfei
+                        </li>
+                        <li>
+                            <a asp-controller="Customer" asp-action="Logout" asp-area="">登出</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-sidebar">
+            <div class="sidebar">
+                <div class="sidebar-form">
+                    <div id="search-box">
+                        <input type="text" class="form-control admin-search-box typeahead" placeholder="search">
+                    </div>
+                </div>
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-cube"></i>
+                            <span>系统管理</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Permission/Index" class="menu-item-link"> <i class="fa fa-dot-circle-o"></i> <span class="menu-item-title">权限管理</span> </a></li>
+                            <li><a href="/Menu/Index" class="menu-item-link"> <i class="fa fa-dot-circle-o"></i> <span class="menu-item-title">菜单管理</span> </a></li>
+                        </ul>
+                    </li>
+                    @*<li class="treeview">
+                        <a href="#">
+                            <i class="fa fa-cube"></i>
+                            <span>客户管理</span>
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
+                        <ul class="treeview-menu">
+                            <li><a href="/Menu/Index1" class="menu-item-link"> <i class="fa fa-dot-circle-o"></i> <span class="menu-item-title">通讯录管理</span> </a></li>
+                            <li><a href="/Menu/Index2" class="menu-item-link"> <i class="fa fa-dot-circle-o"></i> <span class="menu-item-title">联系人管理</span> </a></li>
+                        </ul>
+                    </li>*@
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <section class="content-header"></section>
+            <section class="content">
+                @RenderBody()
+            </section>
+        </div>
+
+        <div class="main-footer clearfix">
+            <div class="pull-left"><a>Powered by chenlinfei</a></div>
+            <div class="pull-right hidden-xs">
+                <b>@DateTime.Now</b>
+            </div>
+        </div>
+    </div>
+
+    <a id="backTop" class="btn btn-back-top bg-teal"></a>
+    <script>
+        $(document).ready(function () {
+            $('#backTop').backTop();
+            $('[data-toggle="tooltip"]').tooltip();
+
+            //menu
+            keepMenuActive();
+        });
+
+        function keepMenuActive() {
+            $('.sidebar-menu').tree();
+            $(".sidebar-menu").filter(".menu-open").removeClass("menu-open");
+            $(".sidebar-menu").filter(".active").removeClass("active");
+            $(".sidebar-menu a").each(function (i) {
+                if ($(this).attr('href') === window.location.pathname) {
+                    $(this).parent().addClass("active");
+                    $(this).parent().parent().parent().addClass("active");
+                    $(this).parent().parent().parent().addClass("menu-open");
+                }
+            });
+
+        }
+    </script>
+</body>
+</html>

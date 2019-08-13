@@ -1,0 +1,47 @@
+﻿@{
+    var kendoVersion = "2014.1.318";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--CSS-->
+    <link href="~/css/admin/styles.css" rel="stylesheet" />
+    <link href="~/lib/adminLTE/css/AdminLTE.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="@Url.Content($"~/lib/kendo/{kendoVersion}/kendo.default.min.css")" rel="stylesheet" />
+    <link href="@Url.Content($"~/lib/kendo/{kendoVersion}/kendo.common.min.css")" rel="stylesheet" />
+    @*<link href="~/lib/jquery-ui/jquery-ui-1.10.3/jquery-ui-themes/smoothness/jquery-ui-1.10.3.custom.css" rel="stylesheet" />*@
+    <link href="~/lib/fontAwesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/lib/typeahead/typeahead.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet" />
+    <link href="~/lib/adminLTE/css/skins/_all-skins.css" rel="stylesheet" />
+    @*<link href="~/lib/datatables/css/jquery.dataTables.css" rel="stylesheet" />*@
+    <link href="~/lib/datatables/css/dataTables.bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/layer/theme/default/layer.css" rel="stylesheet" />
+    <link href="~/lib/bootstrapValidator/css/bootstrapValidator.css" rel="stylesheet" />
+
+    <!--Script-->
+    <script src="~/lib/jquery/jquery-1.10.2.min.js"></script>
+    <script src="~/lib/bootstrap-touchspin/jquery.bootstrap-touchspin.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/lib/adminLTE/js/adminlte.min.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate-v1.11.1/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    @*<script src="~/lib/jquery-ui/jquery-ui-1.10.3/jquery-ui-1.10.3.custom.min.js"></script>*@
+    <script src="~/lib/jquery-migrate/jquery-migrate-1.2.1.min.js"></script>
+    <script src="~/lib/typeahead/typeahead.bundle.min.js"></script>
+    <script src="@Url.Content($"~/lib/kendo/{kendoVersion}/kendo.web.min.js")"></script>
+    <script src="~/lib/datatables/js/jquery.dataTables.js"></script>
+    <script src="~/lib/datatables/js/dataTables.bootstrap.js"></script>
+    <script src="~/lib/datatables/extensions/dataTables.select.js"></script>
+    <script src="~/lib/layer/layer.js"></script>
+    <script src="~/lib/bootstrapValidator/js/bootstrapValidator.js"></script>
+    <script src="~/js/public.common.js"></script>
+</head>
+<body >
+    @RenderBody()
+</body>
+</html>

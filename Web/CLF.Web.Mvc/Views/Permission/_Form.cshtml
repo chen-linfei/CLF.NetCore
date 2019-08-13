@@ -1,0 +1,151 @@
+﻿@model CLF.Service.DTO.Account.PermissionDTO
+@using CLF.Web.Mvc.Constants
+@{
+    Layout = "~/Views/Shared/_FormLayout.cshtml";
+}
+<div class="container">
+    <div class="page-header" style="margin:auto 0;">
+    </div>
+    <form id="permissionForm">
+        <input asp-for="Id" type="hidden" />
+        @Html.AntiForgeryToken()
+
+        <div class="content">
+            <div class="form-horizontal">
+                <div class="panel-group">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <div class="col-xs-3">
+                                    <app-label asp-for="Name" required=true />
+                                </div>
+                                <div class="col-xs-9">
+                                    <input asp-for="Name" class="form-control" autocomplete="off" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-3">
+                                    <app-label asp-for="ControllerName" required=true />
+                                </div>
+                                <div class="col-xs-9">
+                                    <input asp-for="ControllerName" class="form-control" autocomplete="off"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-3">
+                                    <app-label asp-for="ActionName" required=true />
+                                </div>
+                                <div class="col-xs-9">
+                                    <input asp-for="ActionName" class="form-control" autocomplete="off"/>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-3">
+                                    <app-label asp-for="Description" />
+                                </div>
+                                <div class="col-xs-9">
+                                    <input asp-for="Description" class="form-control" autocomplete="off"/>
+                                </div>
+                            </div>
+                            <div style="display:none">
+                                <button id="triggerFormSubmitBtn" type="submit"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    </div>
+<script>
+    $(function () {
+        $('#permissionForm').bootstrapValidator({
+            container: 'tooltip',
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                Name: {
+                    validators: {
+                        stringLength: {
+                            enabled: false,
+                            min: 2,
+                            message: '最少2个字符'
+                        },
+                        notEmpty: {
+                            message: '必填'
+                        }
+                    }
+                },
+                ControllerName: {
+                    validators: {
+                        stringLength: {
+                            enabled: false,
+                            min: 2,
+                            message: '最少2个字符'
+                        },
+                        notEmpty: {
+                            message: '必填'
+                        },
+                        regexp: {
+                            enabled: true,
+                            regexp: /^[a-z]+$/i,
+                            message: '只能是字母'
+                        }
+                    }
+                },
+                ActionName: {
+                    validators: {
+                        stringLength: {
+                            enabled: false,
+                            min: 2,
+                            message: '最少2个字符'
+                        },
+                        notEmpty: {
+                            message: '必填'
+                        },
+                        regexp: {
+                            enabled: true,
+                            regexp: /^[a-z]+$/i,
+                            message: '只能是字母'
+                        }
+                    }
+                }
+            }
+        }).on('success.form.bv', function (e) {
+            //防止默认submit
+            e.preventDefault();
+
+            savePermission($(e.target))
+        });
+    });
+
+    function savePermission(form) {
+        var layerLoad = layer.load();
+        $.ajax({
+            url: '@Url.Action(ActionMethods.CreateOrUpdate,ControllerNames.Permission)',
+            type: 'POST',
+            data: form.serialize(),
+            success: function (result) {
+                if (result.success) {
+                    $.layer.showSuccessMessage("数据保存成功！", null, null, closeIframeAndReloadData, closeIframeAndReloadData);
+                }
+                else {
+                    $.layer.showErrorMessage(result.message);
+                }
+            },
+            complete: function () {
+                layer.close(layerLoad);
+            }
+        })
+    }
+
+    function closeIframeAndReloadData() {
+        var index = parent.layer.getFrameIndex(window.name); //先得到当前iframe层的索引
+        parent.layer.close(index); //再执行关闭 ,会关闭指定Iframe所有弹窗
+
+        $(parent.document.getElementById("search-customers")).trigger('click');
+    }
+</script>
