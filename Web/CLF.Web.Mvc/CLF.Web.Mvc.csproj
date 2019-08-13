@@ -16,14 +16,14 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Common\CLF.Web.Framework\CLF.Web.Framework.csproj" />
+    <Folder Include="Components\" />
+    <Folder Include="wwwroot\lib\datatables\extensions\" />
+    <Folder Include="wwwroot\lib\bootstrapValidator\" />
   </ItemGroup>
 
 
   <ItemGroup>
-    <Folder Include="Components\" />
-    <Folder Include="wwwroot\lib\datatables\extensions\" />
-    <Folder Include="wwwroot\lib\bootstrapValidator\" />
+    <ProjectReference Include="..\CLF.Web.Framework\CLF.Web.Framework.csproj" />
   </ItemGroup>
 
 </Project>

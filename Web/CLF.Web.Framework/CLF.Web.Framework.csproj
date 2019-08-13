@@ -15,7 +15,6 @@
     <ProjectReference Include="..\..\Domain\Account\CLF.DataAccess.Account\CLF.DataAccess.Account.csproj" />
     <ProjectReference Include="..\..\Domain\CLF.Domain.Core\CLF.Domain.Core.csproj" />
     <ProjectReference Include="..\..\Service\CLF.Service.Account\CLF.Service.Account.csproj" />
-    <ProjectReference Include="..\CLF.Common\CLF.Common.csproj" />
   </ItemGroup>
 
 </Project>

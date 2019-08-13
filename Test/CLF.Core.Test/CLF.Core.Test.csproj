@@ -22,8 +22,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Common\CLF.Web.Framework\CLF.Web.Framework.csproj" />
     <ProjectReference Include="..\..\Domain\Account\CLF.DataAccess.Account\CLF.DataAccess.Account.csproj" />
+    <ProjectReference Include="..\..\Web\CLF.Web.Framework\CLF.Web.Framework.csproj" />
     <ProjectReference Include="..\CLF.Test\CLF.Test.csproj" />
   </ItemGroup>
 
