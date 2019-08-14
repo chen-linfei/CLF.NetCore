@@ -55,7 +55,7 @@
                         </div>
                         <div class="row">
                             <div class="col-md-7 col-md-offset-5">
-                                <button type="button" id="search-customers" class="btn btn-primary btn-search" onclick="search();">
+                                <button type="button"  id="search-customers" class="btn btn-primary btn-search">
                                     <i class="fa fa-search"></i>查询
                                 </button>
                             </div>
@@ -75,6 +75,7 @@
 
     $(function () {
         loadPermissions();
+        $('#search-customers').on('click', search);
     })
 
     function loadPermissions() {
@@ -158,7 +159,7 @@
                 data: { ids: ids },
                 success: function (result) {
                     $.layer.showSuccessMessage('数据删除成功！')
-                    $(parent.document.getElementById("search-customers")).trigger('click');
+                    $("#search-customers").trigger('click');
                 },
                 complete: function () {
                     layer.close(index);
