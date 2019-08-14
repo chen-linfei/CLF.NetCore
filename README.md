@@ -1,4 +1,6 @@
 # CLF.NetCore
+### ¼ÓÈëÈºÁÄ£ºÉîÛÚ.Net CoreÌ½Ë÷Èº£º794318601
+
 ### ¿ò¼Ü½éÉÜ
 CLF.NetCoreÊÇÒ»¸öÄÃÀ´¼´ÓÃµÄB/S¿ªÔ´»ù´¡¿ò¼Ü£¬²ÉÓÃDDDË¼ÏëÉè¼Æ¿ò¼Ü£¬ÒÔAsp.net core Mvc£¬ EF CoreÎªÖ÷Òª¼¼Êõ£¬Ò×ÉÏÊÖ£¬Ò×À©Õ¹£¬¿ÉÊÊÓÃÓÚÖÐÐ¡ÐÍÏîÄ¿¡£ËüÒÑ¾­°ïÄã´î½¨ºÃÁËÒ»¸ö»ù´¡µÄ.NET Core¿ò¼Ü£¬°üÀ¨Ç°¶Ë£¨AdminLTE£¬»ùÓÚBootStrap£©£¬DownloadÏîÄ¿ºó¿ÉÒÔÖ±½Ó¿ªÕ¹ÒµÎñÂß¼­£¬Ð´ÔöÉ¾¸Ä²é´úÂë£¬²»¹ÜÊÇ.NETÐÂÊÖ»¹ÊÇÀÏÄñ¶¼ÄÜÇáËÉÉÏÊÖ¡£
 
@@ -31,4 +33,3 @@ DatabaseInitializerTestÀàÖÐµÄInitAcccountDatabase·½·¨£¬¼´¿É×Ô¶¯ÔÚÄã±¾µØÉú³ÉÊý¾Ý¿
 ### ÈçºÎ¿ìËÙ´´½¨Ò»¸öÁìÓòÄ£ÐÍ
 * ÏêÏ¸ÃèÊö¼ûÏîÄ¿ÎÄµµ
 
-### ¼ÓÈëÈºÁÄ£ºÉîÛÚ.Net CoreÌ½Ë÷Èº£º794318601
