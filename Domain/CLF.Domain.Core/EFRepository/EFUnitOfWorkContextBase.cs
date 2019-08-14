@@ -230,7 +230,6 @@ namespace CLF.Domain.Core.EFRepository
                 Context.Set<TEntity>().Attach(entity);
             }
 
-            //Context.Entry(entity).State = EntityState.Modified;
             if (entity is Entity)
             {
                 Context.Entry(entity).Property("IsDeleted").IsModified = true;

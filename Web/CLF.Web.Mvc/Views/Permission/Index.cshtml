@@ -170,7 +170,7 @@
 
     function search() {
         //$('#permissionTable').DataTable().draw();   //都可以重新加载数据
-        getTableSelectedRows().deselect();//清除所有选中行
+        getTableSelectedRows().deselect(); //清除所有选中行
 
         $('#permissionTable').DataTable().ajax.reload();
         $('#permissionTable').find('#materCheckbox').prop('checked', false);
