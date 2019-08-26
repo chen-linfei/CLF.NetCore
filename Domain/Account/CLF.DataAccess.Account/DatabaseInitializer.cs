@@ -17,7 +17,7 @@ namespace CLF.DataAccess.Account
             }
             catch (Exception ex)
             {
-
+                throw ex;
             }
         }
     }
