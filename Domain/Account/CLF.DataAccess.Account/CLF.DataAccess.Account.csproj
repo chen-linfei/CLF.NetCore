@@ -5,6 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="DataInitial\InitData.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="DataInitial\InitData.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\CLF.Domain.Core\CLF.Domain.Core.csproj" />
     <ProjectReference Include="..\..\CLF.Model.Core\CLF.Model.Core.csproj" />
     <ProjectReference Include="..\CLF.Model.Account\CLF.Model.Account.csproj" />

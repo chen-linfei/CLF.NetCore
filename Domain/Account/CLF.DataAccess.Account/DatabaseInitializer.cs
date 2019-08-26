@@ -7,11 +7,18 @@ namespace CLF.DataAccess.Account
 {
   public static  class DatabaseInitializer
     {
-        public static void Initialize(IServiceProvider serviceProvider)
+        public static void Initialize(IServiceProvider serviceProvider = null)
         {
-            var options = serviceProvider.GetService<DbContextOptions<AccountContext>>();
-            var accountContext = new AccountContext(options);
-            accountContext.Database.Migrate();
+            try
+            {
+                var options = EngineContext.Current.Resolve<DbContextOptions<AccountContext>>();
+                var accountContext = new AccountContext(options);
+                accountContext.Database.Migrate();
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
     }
 }

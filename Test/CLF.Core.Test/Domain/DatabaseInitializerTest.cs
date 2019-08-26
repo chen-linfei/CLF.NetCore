@@ -6,15 +6,42 @@ using NUnit.Framework;
 using System;
 using CLF.Web.Framework.Infrastructure.Extensions;
 using CLF.Web.Framework.Infrastructure;
+using Microsoft.AspNetCore.Hosting;
+using System.IO;
+using Microsoft.AspNetCore;
+using Microsoft.AspNetCore.TestHost;
 
 namespace CLF.Core.Test.Domain
 {
     [TestFixture]
     public class DatabaseInitializerTest
     {
-        private IConfiguration _configuration;
-
         [SetUp]
+        public void UseStartup()
+        {
+            var builder = new WebHostBuilder()
+                   .ConfigureAppConfiguration(config =>
+                      {
+                          config.SetBasePath(Directory.GetCurrentDirectory());
+                          config.AddJsonFile("appsettings.json");
+                      })
+                      .UseStartup<CLF.Web.Mvc.Startup>();
+
+            var server = new TestServer(builder);
+        }
+
+        /// <summary>
+        /// 生成Acccount数据库
+        /// </summary>
+        [Test]
+        public void InitAcccountDatabase()
+        {
+            DatabaseInitializer.Initialize();
+        }
+
+        #region
+
+        private IConfiguration _configuration;
         public void SetConfiguration()
         {
             var builder = new ConfigurationBuilder()
@@ -26,10 +53,9 @@ namespace CLF.Core.Test.Domain
         }
 
         /// <summary>
-        /// 生成Acccount数据库.
+        /// 生成Acccount数据库(不启动startup的方式)
         /// </summary>
-        [Test]
-        public void InitAcccountDatabase()
+        public void InitAcccountDB()
         {
             var serviceCollection = new ServiceCollection();
 
@@ -39,5 +65,6 @@ namespace CLF.Core.Test.Domain
             var serviceProvider = serviceCollection.BuildServiceProvider();
             DatabaseInitializer.Initialize(serviceProvider);
         }
+        #endregion
     }
 }

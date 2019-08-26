@@ -16,14 +16,19 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.TestHost" Version="2.2.0" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.2.0" />
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.13.0" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="2.4.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\Domain\Account\CLF.DataAccess.Account\CLF.DataAccess.Account.csproj" />
     <ProjectReference Include="..\..\Web\CLF.Web.Framework\CLF.Web.Framework.csproj" />
+    <ProjectReference Include="..\..\Web\CLF.Web.Mvc\CLF.Web.Mvc.csproj" />
     <ProjectReference Include="..\CLF.Test\CLF.Test.csproj" />
   </ItemGroup>
 
