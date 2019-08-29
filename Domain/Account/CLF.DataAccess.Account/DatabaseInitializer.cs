@@ -9,16 +9,14 @@ namespace CLF.DataAccess.Account
     {
         public static void Initialize(IServiceProvider serviceProvider = null)
         {
-            try
-            {
-                var options = EngineContext.Current.Resolve<DbContextOptions<AccountContext>>();
-                var accountContext = new AccountContext(options);
-                accountContext.Database.Migrate();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            DbContextOptions<AccountContext> options = null;
+            if (serviceProvider != null)
+                options = serviceProvider.GetService<DbContextOptions<AccountContext>>();
+            else
+                options = EngineContext.Current.Resolve<DbContextOptions<AccountContext>>();
+
+            var accountContext = new AccountContext(options);
+            accountContext.Database.Migrate();
         }
     }
 }
